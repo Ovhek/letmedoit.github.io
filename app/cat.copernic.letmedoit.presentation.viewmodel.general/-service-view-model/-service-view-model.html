@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>ServiceViewModel</title>
+    <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../../../";</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/jetbrains-mono.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+</head>
+<body>
+<div class="navigation-wrapper" id="navigation-wrapper">
+    <div id="leftToggler"><span class="icon-toggler"></span></div>
+    <div class="library-name">
+            <a href="../../../index.html">
+                    <span>app</span>
+            </a>
+    </div>
+    <div>
+    </div>
+    <div class="pull-right d-flex">
+        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
+        <div id="searchBar"></div>
+    </div>
+</div>
+<div id="container">
+    <div id="leftColumn">
+        <div id="sideMenu"></div>
+    </div>
+    <div id="main">
+<div class="main-content" id="content" pageIds="app::cat.copernic.letmedoit.presentation.viewmodel.general/ServiceViewModel/ServiceViewModel/#cat.copernic.letmedoit.domain.usecases.service.GetAllServicesUseCase#cat.copernic.letmedoit.domain.usecases.service.GetServiceUseCase#cat.copernic.letmedoit.domain.usecases.service.SaveServiceUseCase#cat.copernic.letmedoit.domain.usecases.service.SaveImageUseCase#cat.copernic.letmedoit.domain.usecases.service.UpdateTitleUseCase#cat.copernic.letmedoit.domain.usecases.service.UpdateEditedTimeUseCase#cat.copernic.letmedoit.domain.usecases.service.UpdateNLikesUseCase#cat.copernic.letmedoit.domain.usecases.service.UpdateDescriptionUseCase#cat.copernic.letmedoit.domain.usecases.service.UpdateCategoryUseCase#cat.copernic.letmedoit.domain.usecases.service.RemoveImageUseCase#cat.copernic.letmedoit.domain.usecases.service.EditServiceImageUseCase#cat.copernic.letmedoit.domain.usecases.service.RemoveServiceUseCase/PointingToDeclaration//492899073">
+  <div class="breadcrumbs"><a href="../../../index.html">app</a><span class="delimiter">/</span><a href="../index.html">cat.copernic.letmedoit.presentation.viewmodel.general</a><span class="delimiter">/</span><a href="index.html">ServiceViewModel</a><span class="delimiter">/</span><span class="current">ServiceViewModel</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span>Service</span><wbr></wbr><span>View</span><wbr></wbr><span><span>Model</span></span></h1>
+  </div>
+  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app:dokkaHtml/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="javax.inject/Inject///PointingToDeclaration/"><span class="token annotation builtin">Inject</span></span></div></div><span class="token keyword"></span><span class="token keyword">fun </span><a href="-service-view-model.html"><span class="token function">ServiceViewModel</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">getAllServicesUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.service/-get-all-services-use-case/index.html">GetAllServicesUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">getServiceUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.service/-get-service-use-case/index.html">GetServiceUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">saveServiceUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.service/-save-service-use-case/index.html">SaveServiceUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">saveImageUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.service/-save-image-use-case/index.html">SaveImageUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">updateTitleUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.service/-update-title-use-case/index.html">UpdateTitleUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">updateEditedTimeUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.service/-update-edited-time-use-case/index.html">UpdateEditedTimeUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">updateNLikesUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.service/-update-n-likes-use-case/index.html">UpdateNLikesUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">updateDescriptionUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.service/-update-description-use-case/index.html">UpdateDescriptionUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">updateCategoryUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.service/-update-category-use-case/index.html">UpdateCategoryUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">removeImageUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.service/-remove-image-use-case/index.html">RemoveImageUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">editServiceImageUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.service/-edit-service-image-use-case/index.html">EditServiceImageUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">removeServiceUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.service/-remove-service-use-case/index.html">RemoveServiceUseCase</a></span></span><span class="token punctuation">)</span></div></div></div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2023 Copyright</span><span
+                class="pull-right"><span>Generated by </span><a
+                href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+    </div>
+</div>
+</body>
+</html>

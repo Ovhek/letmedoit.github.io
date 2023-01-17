@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>UserViewModel</title>
+    <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../../../";</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/jetbrains-mono.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+</head>
+<body>
+<div class="navigation-wrapper" id="navigation-wrapper">
+    <div id="leftToggler"><span class="icon-toggler"></span></div>
+    <div class="library-name">
+            <a href="../../../index.html">
+                    <span>app</span>
+            </a>
+    </div>
+    <div>
+    </div>
+    <div class="pull-right d-flex">
+        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
+        <div id="searchBar"></div>
+    </div>
+</div>
+<div id="container">
+    <div id="leftColumn">
+        <div id="sideMenu"></div>
+    </div>
+    <div id="main">
+<div class="main-content" id="content" pageIds="app::cat.copernic.letmedoit.presentation.viewmodel.users/UserViewModel///PointingToDeclaration//492899073">
+  <div class="breadcrumbs"><a href="../../../index.html">app</a><span class="delimiter">/</span><a href="../index.html">cat.copernic.letmedoit.presentation.viewmodel.users</a><span class="delimiter">/</span><span class="current">UserViewModel</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span>User</span><wbr></wbr><span>View</span><wbr></wbr><span><span>Model</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">UserViewModel</a> <span><span class="token annotation builtin">@</span><span data-unresolved-link="javax.inject/Inject///PointingToDeclaration/"><span class="token annotation builtin">Inject</span></span> </span><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">addChatUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.user/-add-chat-use-case/index.html">AddChatUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">addFavoriteProfileUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.user/-add-favorite-profile-use-case/index.html">AddFavoriteProfileUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">addFavoriteServiceUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.user/-add-favorite-service-use-case/index.html">AddFavoriteServiceUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">addHistoryDealUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.user/-add-history-deal-use-case/index.html">AddHistoryDealUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">addOpinionUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.user/-add-opinion-use-case/index.html">AddOpinionUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">addServiceUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.user/-add-service-use-case/index.html">AddServiceUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">addDeviceTokenUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.user/-add-device-token-use-case/index.html">AddDeviceTokenUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">addAvatarToStorageUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.user/-add-avatar-to-storage-use-case/index.html">AddAvatarToStorageUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">addCurriculumToStorageUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.user/-add-curriculum-to-storage-use-case/index.html">AddCurriculumToStorageUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">deleteCurriculumFromStorageUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.user/-delete-curriculum-from-storage-use-case/index.html">DeleteCurriculumFromStorageUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">deleteAvatarFromStorageUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.user/-delete-avatar-from-storage-use-case/index.html">DeleteAvatarFromStorageUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">deleteFavoriteProfileUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.user/-delete-favorite-profile-use-case/index.html">DeleteFavoriteProfileUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">deleteFavoriteServiceUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.user/-delete-favorite-service-use-case/index.html">DeleteFavoriteServiceUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">deleteServiceUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.user/-delete-service-use-case/index.html">DeleteServiceUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">deleteDealFromHistoryUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.user/-delete-deal-from-history-use-case/index.html">DeleteDealFromHistoryUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">getChatsUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.user/-get-chats-use-case/index.html">GetChatsUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">getAllUserUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.user/-get-all-users-use-case/index.html">GetAllUsersUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">getFavoriteProfilesUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.user/-get-favorite-profiles-use-case/index.html">GetFavoriteProfilesUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">getFavoriteServicesUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.user/-get-favorite-services-use-case/index.html">GetFavoriteServicesUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">getHistoryDealsUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.user/-get-history-deals-use-case/index.html">GetHistoryDealsUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">getOpinionsUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.user/-get-opinions-use-case/index.html">GetOpinionsUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">getServicesUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.user/-get-services-use-case/index.html">GetServicesUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">getUserUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.user/-get-user-use-case/index.html">GetUserUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">updateAboutMeUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.user/-update-about-me-use-case/index.html">UpdateAboutMeUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">updateAvatarUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.user/-update-avatar-use-case/index.html">UpdateAvatarUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">updateContactInfoUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.user/-update-contact-info-use-case/index.html">UpdateContactInfoUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">updateCurriculumUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.user/-update-curriculum-use-case/index.html">UpdateCurriculumUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">updateDarkThemeUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.user/-update-dark-theme-use-case/index.html">UpdateDarkThemeUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">updateLanguageUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.user/-update-language-use-case/index.html">UpdateLanguageUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">updateBanUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.user/-update-ban-use-case/index.html">UpdateBanUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">updateLocationUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.user/-update-location-use-case/index.html">UpdateLocationUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">updateNameUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.user/-update-name-use-case/index.html">UpdateNameUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">updateSurnameUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.user/-update-surname-use-case/index.html">UpdateSurnameUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">updatePasswordUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.user/-update-password-use-case/index.html">UpdatePasswordUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">updateRatingUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.user/-update-rating-use-case/index.html">UpdateRatingUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">updateScheduleUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.user/-update-schedule-use-case/index.html">UpdateScheduleUseCase</a></span></span><span class="token punctuation">)</span> : <a href="https://developer.android.com/reference/kotlin/androidx/lifecycle/ViewModel.html">ViewModel</a></div><p class="paragraph">Una clase ViewModel que conecta la vista con el repositorio Users. Proporciona objetos LiveData para mostrar el estado actual de las operaciones. Todas las funciones de esta clase actuan sobre la base de datos. Utiliza los UseCase para comunicarse con el repositorio</p></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="Constructors">Constructors</button><button class="section-tab" data-togglable="Functions">Functions</button><button class="section-tab" data-togglable="Properties">Properties</button><button class="section-tab" data-togglable="Parameters">Parameters</button></div>
+    <div class="tabs-section-body">
+      <h4 class="">Parameters</h4>
+      <div data-togglable="Parameters">
+        <div class="platform-hinted WithExtraAttributes" data-platform-hinted="data-platform-hinted" data-togglable="Parameters"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app:dokkaHtml/release"><div data-togglable="Parameters"><div class="table" data-togglable="Parameters"><div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex"><div><u><span>add</span><wbr></wbr><span>Chat</span><wbr></wbr><span>Use</span><wbr></wbr><span><span>Case</span></span></u></div></span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">objeto AddChatUseCase</p></div></div></div></div></div><div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex"><div><u><span>add</span><wbr></wbr><span>Favorite</span><wbr></wbr><span>Profile</span><wbr></wbr><span>Use</span><wbr></wbr><span><span>Case</span></span></u></div></span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">objeto de AddFavoriteProfileUseCase</p></div></div></div></div></div><div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex"><div><u><span>add</span><wbr></wbr><span>Favorite</span><wbr></wbr><span>Service</span><wbr></wbr><span>Use</span><wbr></wbr><span><span>Case</span></span></u></div></span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">objeto de AddFavoriteServiceUseCase</p></div></div></div></div></div><div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex"><div><u><span>add</span><wbr></wbr><span>History</span><wbr></wbr><span>Deal</span><wbr></wbr><span>Use</span><wbr></wbr><span><span>Case</span></span></u></div></span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">objeto de AddHistoryDealUseCase</p></div></div></div></div></div><div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex"><div><u><span>add</span><wbr></wbr><span>Opinion</span><wbr></wbr><span>Use</span><wbr></wbr><span><span>Case</span></span></u></div></span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">objeto de AddOpinionUseCase</p></div></div></div></div></div><div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex"><div><u><span>add</span><wbr></wbr><span>Service</span><wbr></wbr><span>Use</span><wbr></wbr><span><span>Case</span></span></u></div></span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">objeto de AddServiceUseCase</p></div></div></div></div></div><div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex"><div><u><span>add</span><wbr></wbr><span>Device</span><wbr></wbr><span>Token</span><wbr></wbr><span>Use</span><wbr></wbr><span><span>Case</span></span></u></div></span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">objeto de AddDeviceTokenUseCase</p></div></div></div></div></div><div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex"><div><u><span>add</span><wbr></wbr><span>Avatar</span><wbr></wbr><span>To</span><wbr></wbr><span>Storage</span><wbr></wbr><span>Use</span><wbr></wbr><span><span>Case</span></span></u></div></span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">objeto de AddAvatarToStorageUseCase</p></div></div></div></div></div><div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex"><div><u><span>add</span><wbr></wbr><span>Curriculum</span><wbr></wbr><span>To</span><wbr></wbr><span>Storage</span><wbr></wbr><span>Use</span><wbr></wbr><span><span>Case</span></span></u></div></span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">objeto de AddCurriculumToStorageUseCase</p></div></div></div></div></div><div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex"><div><u><span>delete</span><wbr></wbr><span>Curriculum</span><wbr></wbr><span>From</span><wbr></wbr><span>Storage</span><wbr></wbr><span>Use</span><wbr></wbr><span><span>Case</span></span></u></div></span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">objeto de DeleteCurriculumFromStorageUseCase</p></div></div></div></div></div><div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex"><div><u><span>delete</span><wbr></wbr><span>Avatar</span><wbr></wbr><span>From</span><wbr></wbr><span>Storage</span><wbr></wbr><span>Use</span><wbr></wbr><span><span>Case</span></span></u></div></span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">objeto de DeleteAvatarFromStorageUseCase</p></div></div></div></div></div><div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex"><div><u><span>delete</span><wbr></wbr><span>Favorite</span><wbr></wbr><span>Profile</span><wbr></wbr><span>Use</span><wbr></wbr><span><span>Case</span></span></u></div></span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">objeto de DeleteFavoriteProfileUseCase</p></div></div></div></div></div><div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex"><div><u><span>delete</span><wbr></wbr><span>Favorite</span><wbr></wbr><span>Service</span><wbr></wbr><span>Use</span><wbr></wbr><span><span>Case</span></span></u></div></span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">objeto de DeleteFavoriteServiceUseCase</p></div></div></div></div></div><div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex"><div><u><span>delete</span><wbr></wbr><span>Service</span><wbr></wbr><span>Use</span><wbr></wbr><span><span>Case</span></span></u></div></span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">objeto de DeleteServiceUseCase</p></div></div></div></div></div><div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex"><div><u><span>delete</span><wbr></wbr><span>Deal</span><wbr></wbr><span>From</span><wbr></wbr><span>History</span><wbr></wbr><span>Use</span><wbr></wbr><span><span>Case</span></span></u></div></span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">objeto de DeleteDealFromHistoryUseCase</p></div></div></div></div></div><div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex"><div><u><span>get</span><wbr></wbr><span>Chats</span><wbr></wbr><span>Use</span><wbr></wbr><span><span>Case</span></span></u></div></span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">objeto de GetChatsUseCase</p></div></div></div></div></div><div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex"><div><u><span>get</span><wbr></wbr><span>All</span><wbr></wbr><span>User</span><wbr></wbr><span>Use</span><wbr></wbr><span><span>Case</span></span></u></div></span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">objeto de GetAllUsersUseCase</p></div></div></div></div></div><div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex"><div><u><span>get</span><wbr></wbr><span>Favorite</span><wbr></wbr><span>Profiles</span><wbr></wbr><span>Use</span><wbr></wbr><span><span>Case</span></span></u></div></span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">objeto de GetFavoriteProfilesUseCase</p></div></div></div></div></div><div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex"><div><u><span>get</span><wbr></wbr><span>Favorite</span><wbr></wbr><span>Services</span><wbr></wbr><span>Use</span><wbr></wbr><span><span>Case</span></span></u></div></span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">objeto de GetFavoriteServicesUseCase</p></div></div></div></div></div><div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex"><div><u><span>get</span><wbr></wbr><span>History</span><wbr></wbr><span>Deals</span><wbr></wbr><span>Use</span><wbr></wbr><span><span>Case</span></span></u></div></span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">objeto de GetHistoryDealsUseCase</p></div></div></div></div></div><div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex"><div><u><span>get</span><wbr></wbr><span>Opinions</span><wbr></wbr><span>Use</span><wbr></wbr><span><span>Case</span></span></u></div></span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">objeto de GetOpinionsUseCase</p></div></div></div></div></div><div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex"><div><u><span>get</span><wbr></wbr><span>Services</span><wbr></wbr><span>Use</span><wbr></wbr><span><span>Case</span></span></u></div></span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">objeto de GetServicesUseCase</p></div></div></div></div></div><div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex"><div><u><span>get</span><wbr></wbr><span>User</span><wbr></wbr><span>Use</span><wbr></wbr><span><span>Case</span></span></u></div></span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">objeto de GetUserUseCase</p></div></div></div></div></div><div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex"><div><u><span>update</span><wbr></wbr><span>About</span><wbr></wbr><span>Me</span><wbr></wbr><span>Use</span><wbr></wbr><span><span>Case</span></span></u></div></span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">objeto de UpdateAboutMeUseCase</p></div></div></div></div></div><div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex"><div><u><span>update</span><wbr></wbr><span>Avatar</span><wbr></wbr><span>Use</span><wbr></wbr><span><span>Case</span></span></u></div></span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">objeto de UpdateAvatarUseCase</p></div></div></div></div></div><div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex"><div><u><span>update</span><wbr></wbr><span>Contact</span><wbr></wbr><span>Info</span><wbr></wbr><span>Use</span><wbr></wbr><span><span>Case</span></span></u></div></span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">objeto de UpdateContactInfoUseCase</p></div></div></div></div></div><div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex"><div><u><span>update</span><wbr></wbr><span>Curriculum</span><wbr></wbr><span>Use</span><wbr></wbr><span><span>Case</span></span></u></div></span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">objeto de UpdateCurriculumUseCase</p></div></div></div></div></div><div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex"><div><u><span>update</span><wbr></wbr><span>Dark</span><wbr></wbr><span>Theme</span><wbr></wbr><span>Use</span><wbr></wbr><span><span>Case</span></span></u></div></span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">objeto de UpdateDarkThemeUseCase</p></div></div></div></div></div><div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex"><div><u><span>update</span><wbr></wbr><span>Language</span><wbr></wbr><span>Use</span><wbr></wbr><span><span>Case</span></span></u></div></span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">objeto de UpdateLanguageUseCase</p></div></div></div></div></div><div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex"><div><u><span>update</span><wbr></wbr><span>Ban</span><wbr></wbr><span>Use</span><wbr></wbr><span><span>Case</span></span></u></div></span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">objeto de UpdateBanUseCase</p></div></div></div></div></div><div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex"><div><u><span>update</span><wbr></wbr><span>Location</span><wbr></wbr><span>Use</span><wbr></wbr><span><span>Case</span></span></u></div></span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">objeto de UpdateLocationUseCase</p></div></div></div></div></div><div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex"><div><u><span>update</span><wbr></wbr><span>Name</span><wbr></wbr><span>Use</span><wbr></wbr><span><span>Case</span></span></u></div></span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">objeto de UpdateNameUseCase</p></div></div></div></div></div><div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex"><div><u><span>update</span><wbr></wbr><span>Surname</span><wbr></wbr><span>Use</span><wbr></wbr><span><span>Case</span></span></u></div></span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">objeto de UpdateSurnameUseCase</p></div></div></div></div></div><div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex"><div><u><span>update</span><wbr></wbr><span>Password</span><wbr></wbr><span>Use</span><wbr></wbr><span><span>Case</span></span></u></div></span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">objeto de UpdatePasswordUseCase</p></div></div></div></div></div><div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex"><div><u><span>update</span><wbr></wbr><span>Rating</span><wbr></wbr><span>Use</span><wbr></wbr><span><span>Case</span></span></u></div></span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">objeto de UpdateRatingUseCase</p></div></div></div></div></div><div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex"><div><u><span>update</span><wbr></wbr><span>Schedule</span><wbr></wbr><span>Use</span><wbr></wbr><span><span>Case</span></span></u></div></span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">objeto de UpdateScheduleUseCase</p></div></div></div></div></div></div></div></div></div>
+      </div>
+      <h2 class="tabbedcontent">Constructors</h2>
+      <div class="table" data-togglable="Constructors"><a data-name="1217249487%2FConstructors%2F492899073" anchor-label="UserViewModel" id="1217249487%2FConstructors%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release">
+          <div class="main-subrow keyValue TabbedContent">
+            <div class=""><span class="inline-flex">
+                <div><a href="-user-view-model.html"><span>User</span><wbr></wbr><span>View</span><wbr></wbr><span><span>Model</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1217249487%2FConstructors%2F492899073"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app:dokkaHtml/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="javax.inject/Inject///PointingToDeclaration/"><span class="token annotation builtin">Inject</span></span></div></div><span class="token keyword"></span><span class="token keyword">fun </span><a href="-user-view-model.html"><span class="token function">UserViewModel</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">addChatUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.user/-add-chat-use-case/index.html">AddChatUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">addFavoriteProfileUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.user/-add-favorite-profile-use-case/index.html">AddFavoriteProfileUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">addFavoriteServiceUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.user/-add-favorite-service-use-case/index.html">AddFavoriteServiceUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">addHistoryDealUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.user/-add-history-deal-use-case/index.html">AddHistoryDealUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">addOpinionUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.user/-add-opinion-use-case/index.html">AddOpinionUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">addServiceUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.user/-add-service-use-case/index.html">AddServiceUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">addDeviceTokenUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.user/-add-device-token-use-case/index.html">AddDeviceTokenUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">addAvatarToStorageUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.user/-add-avatar-to-storage-use-case/index.html">AddAvatarToStorageUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">addCurriculumToStorageUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.user/-add-curriculum-to-storage-use-case/index.html">AddCurriculumToStorageUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">deleteCurriculumFromStorageUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.user/-delete-curriculum-from-storage-use-case/index.html">DeleteCurriculumFromStorageUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">deleteAvatarFromStorageUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.user/-delete-avatar-from-storage-use-case/index.html">DeleteAvatarFromStorageUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">deleteFavoriteProfileUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.user/-delete-favorite-profile-use-case/index.html">DeleteFavoriteProfileUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">deleteFavoriteServiceUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.user/-delete-favorite-service-use-case/index.html">DeleteFavoriteServiceUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">deleteServiceUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.user/-delete-service-use-case/index.html">DeleteServiceUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">deleteDealFromHistoryUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.user/-delete-deal-from-history-use-case/index.html">DeleteDealFromHistoryUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">getChatsUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.user/-get-chats-use-case/index.html">GetChatsUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">getAllUserUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.user/-get-all-users-use-case/index.html">GetAllUsersUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">getFavoriteProfilesUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.user/-get-favorite-profiles-use-case/index.html">GetFavoriteProfilesUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">getFavoriteServicesUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.user/-get-favorite-services-use-case/index.html">GetFavoriteServicesUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">getHistoryDealsUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.user/-get-history-deals-use-case/index.html">GetHistoryDealsUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">getOpinionsUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.user/-get-opinions-use-case/index.html">GetOpinionsUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">getServicesUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.user/-get-services-use-case/index.html">GetServicesUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">getUserUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.user/-get-user-use-case/index.html">GetUserUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">updateAboutMeUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.user/-update-about-me-use-case/index.html">UpdateAboutMeUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">updateAvatarUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.user/-update-avatar-use-case/index.html">UpdateAvatarUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">updateContactInfoUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.user/-update-contact-info-use-case/index.html">UpdateContactInfoUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">updateCurriculumUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.user/-update-curriculum-use-case/index.html">UpdateCurriculumUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">updateDarkThemeUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.user/-update-dark-theme-use-case/index.html">UpdateDarkThemeUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">updateLanguageUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.user/-update-language-use-case/index.html">UpdateLanguageUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">updateBanUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.user/-update-ban-use-case/index.html">UpdateBanUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">updateLocationUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.user/-update-location-use-case/index.html">UpdateLocationUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">updateNameUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.user/-update-name-use-case/index.html">UpdateNameUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">updateSurnameUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.user/-update-surname-use-case/index.html">UpdateSurnameUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">updatePasswordUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.user/-update-password-use-case/index.html">UpdatePasswordUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">updateRatingUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.user/-update-rating-use-case/index.html">UpdateRatingUseCase</a><span class="token punctuation">, </span></span><span class="parameter ">updateScheduleUseCase<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.domain.usecases.user/-update-schedule-use-case/index.html">UpdateScheduleUseCase</a></span></span><span class="token punctuation">)</span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h2 class="">Functions</h2>
+      <div class="table" data-togglable="Functions"><a data-name="-1763541434%2FFunctions%2F492899073" anchor-label="addAvatarToStorage" id="-1763541434%2FFunctions%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="add-avatar-to-storage.html"><span>add</span><wbr></wbr><span>Avatar</span><wbr></wbr><span>To</span><wbr></wbr><span><span>Storage</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1763541434%2FFunctions%2F492899073"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="add-avatar-to-storage.html"><span class="token function">addAvatarToStorage</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">uri<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/net/Uri.html">Uri</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Sube una imagen de perfil Utiliza el addAvatarToStorageUseCase para invocar la funcion correpondiente del repositorio</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-2128316087%2FFunctions%2F492899073" anchor-label="addChat" id="-2128316087%2FFunctions%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="add-chat.html"><span>add</span><wbr></wbr><span><span>Chat</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2128316087%2FFunctions%2F492899073"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="add-chat.html"><span class="token function">addChat</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">idChat<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Funcion que añade un chat Para futuras versiones</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="264516373%2FFunctions%2F492899073" anchor-label="addCloseable" id="264516373%2FFunctions%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="../../cat.copernic.letmedoit.presentation.viewmodel.visitante/-register-view-model/index.html#264516373%2FFunctions%2F492899073"><span>add</span><wbr></wbr><span><span>Closeable</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="264516373%2FFunctions%2F492899073"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../cat.copernic.letmedoit.presentation.viewmodel.visitante/-register-view-model/index.html#264516373%2FFunctions%2F492899073"><span class="token function">addCloseable</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html"><span class="token annotation builtin">NonNull</span></a> </span>p0<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/java/io/Closeable.html">Closeable</a></span></span><span class="token punctuation">)</span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1369260196%2FFunctions%2F492899073" anchor-label="addCurriculumToStorage" id="1369260196%2FFunctions%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="add-curriculum-to-storage.html"><span>add</span><wbr></wbr><span>Curriculum</span><wbr></wbr><span>To</span><wbr></wbr><span><span>Storage</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1369260196%2FFunctions%2F492899073"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="add-curriculum-to-storage.html"><span class="token function">addCurriculumToStorage</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">uri<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/net/Uri.html">Uri</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Sube un curriculum(pdf) Utiliza addCurriculumToStorageUseCase para invocar a la funcion correpondiente del repositorio</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1156276064%2FFunctions%2F492899073" anchor-label="addDeviceToken" id="-1156276064%2FFunctions%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="add-device-token.html"><span>add</span><wbr></wbr><span>Device</span><wbr></wbr><span><span>Token</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1156276064%2FFunctions%2F492899073"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="add-device-token.html"><span class="token function">addDeviceToken</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">token<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Inserta un token en el dispositivo Utiliza addDeviceTokenUseCase para invocar la funcion correspondiente del repositorio</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1358087498%2FFunctions%2F492899073" anchor-label="addFavoriteProfile" id="1358087498%2FFunctions%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="add-favorite-profile.html"><span>add</span><wbr></wbr><span>Favorite</span><wbr></wbr><span><span>Profile</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1358087498%2FFunctions%2F492899073"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="add-favorite-profile.html"><span class="token function">addFavoriteProfile</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">idProfile<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Funcion que añade un perfil a la lista de favoritos Utiliza addFavoriteProfileUseCase para invocar la funcion correspondiente del repositorio</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1356716374%2FFunctions%2F492899073" anchor-label="addFavoriteService" id="1356716374%2FFunctions%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="add-favorite-service.html"><span>add</span><wbr></wbr><span>Favorite</span><wbr></wbr><span><span>Service</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1356716374%2FFunctions%2F492899073"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="add-favorite-service.html"><span class="token function">addFavoriteService</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">idService<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Funcion que añade un servicio a favoritos Utiliza el addFavoriteServiceUseCase para invocar la funcion correspondiente del repositorio</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="68783175%2FFunctions%2F492899073" anchor-label="addHistoryDeal" id="68783175%2FFunctions%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="add-history-deal.html"><span>add</span><wbr></wbr><span>History</span><wbr></wbr><span><span>Deal</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="68783175%2FFunctions%2F492899073"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="add-history-deal.html"><span class="token function">addHistoryDeal</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">idUserOne<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">idUserTwo<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">idDeal<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Funcion que añade un trato al historial de tratos Utiliza el addHistoryDealUseCasa para invocar la funcion correspondiente del repositorio</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1266944219%2FFunctions%2F492899073" anchor-label="addOpinion" id="-1266944219%2FFunctions%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="add-opinion.html"><span>add</span><wbr></wbr><span><span>Opinion</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1266944219%2FFunctions%2F492899073"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="add-opinion.html"><span class="token function">addOpinion</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">opinion<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.data.model/-opinion/index.html">Opinion</a><span class="token punctuation">, </span></span><span class="parameter ">idUser<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Funcion que añade una opinion Utiliza el addOpinionUseCase para invocar la funcion correpondiente del repositorio</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1768449134%2FFunctions%2F492899073" anchor-label="addService" id="-1768449134%2FFunctions%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="add-service.html"><span>add</span><wbr></wbr><span><span>Service</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1768449134%2FFunctions%2F492899073"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="add-service.html"><span class="token function">addService</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">idService<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Funcion que sube un servicio Utiliza el addServiceUseCase para invocar la funcion correspondiente del repositorio</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1092584803%2FFunctions%2F492899073" anchor-label="deleteAvatarFromStorage" id="-1092584803%2FFunctions%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="delete-avatar-from-storage.html"><span>delete</span><wbr></wbr><span>Avatar</span><wbr></wbr><span>From</span><wbr></wbr><span><span>Storage</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1092584803%2FFunctions%2F492899073"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="delete-avatar-from-storage.html"><span class="token function">deleteAvatarFromStorage</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">imgLink<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Elimina la imagen de perfil Utiliza deleteAvatarFromStorageUseCase para invocar la funcion correspondiente del repositorio</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="2043635963%2FFunctions%2F492899073" anchor-label="deleteCurriculumFromStorage" id="2043635963%2FFunctions%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="delete-curriculum-from-storage.html"><span>delete</span><wbr></wbr><span>Curriculum</span><wbr></wbr><span>From</span><wbr></wbr><span><span>Storage</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2043635963%2FFunctions%2F492899073"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="delete-curriculum-from-storage.html"><span class="token function">deleteCurriculumFromStorage</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">imgLink<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Elimina el curriculum(pdf) de la base de datos Utiliza deleteCurriculumFromStorageUseCase para invocar la funcion correspondiente del repositorio</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="344880461%2FFunctions%2F492899073" anchor-label="deleteDealFromHistory" id="344880461%2FFunctions%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="delete-deal-from-history.html"><span>delete</span><wbr></wbr><span>Deal</span><wbr></wbr><span>From</span><wbr></wbr><span><span>History</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="344880461%2FFunctions%2F492899073"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="delete-deal-from-history.html"><span class="token function">deleteDealFromHistory</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">idDeal<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">idUser<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">idUserTwo<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Elimina un trato del historial de tratos Utiliza deleteDealFromHistoryUseCase para invocar la funcion del repositorio</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1701101966%2FFunctions%2F492899073" anchor-label="deleteFavoriteProfile" id="-1701101966%2FFunctions%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="delete-favorite-profile.html"><span>delete</span><wbr></wbr><span>Favorite</span><wbr></wbr><span><span>Profile</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1701101966%2FFunctions%2F492899073"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="delete-favorite-profile.html"><span class="token function">deleteFavoriteProfile</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">idProfile<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Elimina un perfil de la lista de favoritos Utiliza deleteFavoriteProfileUseCase para invocar la funcion del repositorio</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1702473090%2FFunctions%2F492899073" anchor-label="deleteFavoriteService" id="-1702473090%2FFunctions%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="delete-favorite-service.html"><span>delete</span><wbr></wbr><span>Favorite</span><wbr></wbr><span><span>Service</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1702473090%2FFunctions%2F492899073"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="delete-favorite-service.html"><span class="token function">deleteFavoriteService</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">idService<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Eliminar un servicio de la lista de favoritos Utiliza deleteFavoriteServiceUseCase para invocar la funcion del repositorio.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="188726458%2FFunctions%2F492899073" anchor-label="deleteService" id="188726458%2FFunctions%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="delete-service.html"><span>delete</span><wbr></wbr><span><span>Service</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="188726458%2FFunctions%2F492899073"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="delete-service.html"><span class="token function">deleteService</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">idService<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Elimina un servicio Utiliza deleteServiceUseCase para invocar la funcion del repositorio</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1127649008%2FFunctions%2F492899073" anchor-label="getAllUser" id="1127649008%2FFunctions%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="get-all-user.html"><span>get</span><wbr></wbr><span>All</span><wbr></wbr><span><span>User</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1127649008%2FFunctions%2F492899073"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-all-user.html"><span class="token function">getAllUser</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Lee todos los usuarios de la base de datos Utiliza getAllUserUseCase para invocar la funcion del repositorio</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1669514623%2FFunctions%2F492899073" anchor-label="getChats" id="-1669514623%2FFunctions%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="get-chats.html"><span>get</span><wbr></wbr><span><span>Chats</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1669514623%2FFunctions%2F492899073"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-chats.html"><span class="token function">getChats</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Obtiene un chat de la bd Para futuras versiones Utiliza getChatsUseCase para invocar la funcion del repositorio</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-273101576%2FFunctions%2F492899073" anchor-label="getFavoriteProfiles" id="-273101576%2FFunctions%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="get-favorite-profiles.html"><span>get</span><wbr></wbr><span>Favorite</span><wbr></wbr><span><span>Profiles</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-273101576%2FFunctions%2F492899073"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-favorite-profiles.html"><span class="token function">getFavoriteProfiles</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Lee los perfiles favoritos de un usario de la base de datos Utiliza getFavoriteProfilesUseCase para invocar la funcion del repositorio</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1358467844%2FFunctions%2F492899073" anchor-label="getFavoriteServices" id="1358467844%2FFunctions%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="get-favorite-services.html"><span>get</span><wbr></wbr><span>Favorite</span><wbr></wbr><span><span>Services</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1358467844%2FFunctions%2F492899073"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-favorite-services.html"><span class="token function">getFavoriteServices</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Lee los servicios favortios de un usuario de la base de datos Utiliza getFavoriteServicesUseCase para invocar la funcion del repositorio</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1433037205%2FFunctions%2F492899073" anchor-label="getHistoryDeals" id="-1433037205%2FFunctions%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="get-history-deals.html"><span>get</span><wbr></wbr><span>History</span><wbr></wbr><span><span>Deals</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1433037205%2FFunctions%2F492899073"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-history-deals.html"><span class="token function">getHistoryDeals</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Lee el historial de tratos del usuario Utiliza getHistoryDealsUseCase para invocar la funcion del repositorio</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1708213591%2FFunctions%2F492899073" anchor-label="getOpinions" id="1708213591%2FFunctions%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="get-opinions.html"><span>get</span><wbr></wbr><span><span>Opinions</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1708213591%2FFunctions%2F492899073"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-opinions.html"><span class="token function">getOpinions</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">idUser<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Lee las opiniones de un usuario de la base de datos Utiliza getOpinionsUseCase para invocar la funcion del repositorio</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="59952836%2FFunctions%2F492899073" anchor-label="getServices" id="59952836%2FFunctions%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="get-services.html"><span>get</span><wbr></wbr><span><span>Services</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="59952836%2FFunctions%2F492899073"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-services.html"><span class="token function">getServices</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">idUser<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Obtiene los servicios de un usuario de la base de datos Utiliza getServicesUseCase para invocar la funcion del repositorio</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1839085583%2FFunctions%2F492899073" anchor-label="getUser" id="-1839085583%2FFunctions%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="get-user.html"><span>get</span><wbr></wbr><span><span>User</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1839085583%2FFunctions%2F492899073"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-user.html"><span class="token function">getUser</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">idUser<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Lee un usuario de la base de datos Utiliza getUserUseCase para invocar la funcion del repositorio</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1251852884%2FFunctions%2F492899073" anchor-label="updateAboutMe" id="-1251852884%2FFunctions%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="update-about-me.html"><span>update</span><wbr></wbr><span>About</span><wbr></wbr><span><span>Me</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1251852884%2FFunctions%2F492899073"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="update-about-me.html"><span class="token function">updateAboutMe</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">aboutMe<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Actualiza la descripcion de un usuario en la base de datos Utiliza updateAboutMeUseCase para invocar la funcion del repositorio</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1010859008%2FFunctions%2F492899073" anchor-label="updateAvatar" id="1010859008%2FFunctions%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="update-avatar.html"><span>update</span><wbr></wbr><span><span>Avatar</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1010859008%2FFunctions%2F492899073"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="update-avatar.html"><span class="token function">updateAvatar</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">imgLink<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Actualiza la imagen de perfil en la base de datos Utiliza updateAvatarUseCase para invocar la funcion del repositorio</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1494154382%2FFunctions%2F492899073" anchor-label="updateBan" id="1494154382%2FFunctions%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="update-ban.html"><span>update</span><wbr></wbr><span><span>Ban</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1494154382%2FFunctions%2F492899073"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="update-ban.html"><span class="token function">updateBan</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">userId<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">ban<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Actualiza el estado de prohibicion del usuario en la base de datos Utiliza updateBanUseCase para invocar la funcion del repositorio</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1478614863%2FFunctions%2F492899073" anchor-label="updateContactInfo" id="-1478614863%2FFunctions%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="update-contact-info.html"><span>update</span><wbr></wbr><span>Contact</span><wbr></wbr><span><span>Info</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1478614863%2FFunctions%2F492899073"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="update-contact-info.html"><span class="token function">updateContactInfo</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">contactInfo<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.Utils.datahepers/-contact-info-map/index.html">ContactInfoMap</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Actualiza la informacion de contacto en la base de datos Utiliza updateContactInfoUseCase para invocar la funcion del repositorio</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1391551134%2FFunctions%2F492899073" anchor-label="updateCurriculum" id="-1391551134%2FFunctions%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="update-curriculum.html"><span>update</span><wbr></wbr><span><span>Curriculum</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1391551134%2FFunctions%2F492899073"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="update-curriculum.html"><span class="token function">updateCurriculum</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">pdfLink<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Actualiza el curriculum(pdf) en la base de datos Utiliza updateCurriculumUseCase para invocar la funcion del repositorio</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1966378479%2FFunctions%2F492899073" anchor-label="updateDarkTheme" id="1966378479%2FFunctions%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="update-dark-theme.html"><span>update</span><wbr></wbr><span>Dark</span><wbr></wbr><span><span>Theme</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1966378479%2FFunctions%2F492899073"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="update-dark-theme.html"><span class="token function">updateDarkTheme</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">darkTheme<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Actualiza el tema Utiliza updateDarkThemeUseCase para invocar la funcion del repositorio</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-264190525%2FFunctions%2F492899073" anchor-label="updateLanguage" id="-264190525%2FFunctions%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="update-language.html"><span>update</span><wbr></wbr><span><span>Language</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-264190525%2FFunctions%2F492899073"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="update-language.html"><span class="token function">updateLanguage</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">language<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Actualiza el lenguage del usuario Utiliza updateLanguageUseCase para invocar la funcion del repositorio</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-784566948%2FFunctions%2F492899073" anchor-label="updateLocation" id="-784566948%2FFunctions%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="update-location.html"><span>update</span><wbr></wbr><span><span>Location</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-784566948%2FFunctions%2F492899073"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="update-location.html"><span class="token function">updateLocation</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">newLocation<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Actualiza la ubicacion del usuario en la base de datos Utiliza updateLocationUseCase para invocar la funcion del repositorio</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1294860366%2FFunctions%2F492899073" anchor-label="updateName" id="-1294860366%2FFunctions%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="update-name.html"><span>update</span><wbr></wbr><span><span>Name</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1294860366%2FFunctions%2F492899073"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="update-name.html"><span class="token function">updateName</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">newName<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Actualiza el nombre personal del usuario en la base de datos Utiliza updateNameUseCase para invocar la funcion del repositorio</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1534416436%2FFunctions%2F492899073" anchor-label="updatePassword" id="-1534416436%2FFunctions%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="update-password.html"><span>update</span><wbr></wbr><span><span>Password</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1534416436%2FFunctions%2F492899073"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="update-password.html"><span class="token function">updatePassword</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">oldPassword<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">newPassword<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">email<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Actualiza la contraseña del usuario de la base de datos Utiliza updatePasswordUseCase para invocar la funcion del repositorio</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="947522678%2FFunctions%2F492899073" anchor-label="updateRating" id="947522678%2FFunctions%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="update-rating.html"><span>update</span><wbr></wbr><span><span>Rating</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="947522678%2FFunctions%2F492899073"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="update-rating.html"><span class="token function">updateRating</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">updatedRating<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a><span class="token punctuation">, </span></span><span class="parameter ">idUser<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Actualiza la valoracion del usuario de la base datos Utiliza updateRatingUseCase para invocar la funcion del repositorio</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1695488551%2FFunctions%2F492899073" anchor-label="updateSchedule" id="1695488551%2FFunctions%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="update-schedule.html"><span>update</span><wbr></wbr><span><span>Schedule</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1695488551%2FFunctions%2F492899073"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="update-schedule.html"><span class="token function">updateSchedule</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">schedule<span class="token operator">: </span><a href="../../cat.copernic.letmedoit.Utils.datahepers/-schedule-map/index.html">ScheduleMap</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Actualiza el horario del usuario en la base de datos Utiliza updateScheduleUseCase para invocar la funcion del repositorio</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-65634302%2FFunctions%2F492899073" anchor-label="updateSurname" id="-65634302%2FFunctions%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="update-surname.html"><span>update</span><wbr></wbr><span><span>Surname</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-65634302%2FFunctions%2F492899073"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="update-surname.html"><span class="token function">updateSurname</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">newSurname<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Actualiza el apellido del usuario en la base de datos Utiliza updateSurnameUseCase para invocar la funcion del repositorio</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h2 class="">Properties</h2>
+      <div class="table" data-togglable="Properties"><a data-name="-1468347255%2FProperties%2F492899073" anchor-label="addAvatarToStorageState" id="-1468347255%2FProperties%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="add-avatar-to-storage-state.html"><span>add</span><wbr></wbr><span>Avatar</span><wbr></wbr><span>To</span><wbr></wbr><span>Storage</span><wbr></wbr><span><span>State</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1468347255%2FProperties%2F492899073"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app:dokkaHtml/release"><a data-name="-1468347255%2FProperties%2F492899073" anchor-label="addAvatarToStorageState" id="-1468347255%2FProperties%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="add-avatar-to-storage-state.html">addAvatarToStorageState</a><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/lifecycle/LiveData.html">LiveData</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../cat.copernic.letmedoit.Utils/-data-state/index.html">DataState</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1276990286%2FProperties%2F492899073" anchor-label="addChatState" id="1276990286%2FProperties%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="add-chat-state.html"><span>add</span><wbr></wbr><span>Chat</span><wbr></wbr><span><span>State</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1276990286%2FProperties%2F492899073"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app:dokkaHtml/release"><a data-name="1276990286%2FProperties%2F492899073" anchor-label="addChatState" id="1276990286%2FProperties%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="add-chat-state.html">addChatState</a><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/lifecycle/LiveData.html">LiveData</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../cat.copernic.letmedoit.Utils/-data-state/index.html">DataState</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1354058855%2FProperties%2F492899073" anchor-label="addCurriculumToStorageState" id="1354058855%2FProperties%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="add-curriculum-to-storage-state.html"><span>add</span><wbr></wbr><span>Curriculum</span><wbr></wbr><span>To</span><wbr></wbr><span>Storage</span><wbr></wbr><span><span>State</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1354058855%2FProperties%2F492899073"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app:dokkaHtml/release"><a data-name="1354058855%2FProperties%2F492899073" anchor-label="addCurriculumToStorageState" id="1354058855%2FProperties%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="add-curriculum-to-storage-state.html">addCurriculumToStorageState</a><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/lifecycle/LiveData.html">LiveData</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../cat.copernic.letmedoit.Utils/-data-state/index.html">DataState</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1998176677%2FProperties%2F492899073" anchor-label="addDeviceTokenState" id="1998176677%2FProperties%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="add-device-token-state.html"><span>add</span><wbr></wbr><span>Device</span><wbr></wbr><span>Token</span><wbr></wbr><span><span>State</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1998176677%2FProperties%2F492899073"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app:dokkaHtml/release"><a data-name="1998176677%2FProperties%2F492899073" anchor-label="addDeviceTokenState" id="1998176677%2FProperties%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="add-device-token-state.html">addDeviceTokenState</a><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/lifecycle/LiveData.html">LiveData</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../cat.copernic.letmedoit.Utils/-data-state/index.html">DataState</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1982582705%2FProperties%2F492899073" anchor-label="addFavoriteProfileState" id="-1982582705%2FProperties%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="add-favorite-profile-state.html"><span>add</span><wbr></wbr><span>Favorite</span><wbr></wbr><span>Profile</span><wbr></wbr><span><span>State</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1982582705%2FProperties%2F492899073"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app:dokkaHtml/release"><a data-name="-1982582705%2FProperties%2F492899073" anchor-label="addFavoriteProfileState" id="-1982582705%2FProperties%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="add-favorite-profile-state.html">addFavoriteProfileState</a><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/lifecycle/LiveData.html">LiveData</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../cat.copernic.letmedoit.Utils/-data-state/index.html">DataState</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="443158619%2FProperties%2F492899073" anchor-label="addFavoriteServiceState" id="443158619%2FProperties%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="add-favorite-service-state.html"><span>add</span><wbr></wbr><span>Favorite</span><wbr></wbr><span>Service</span><wbr></wbr><span><span>State</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="443158619%2FProperties%2F492899073"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app:dokkaHtml/release"><a data-name="443158619%2FProperties%2F492899073" anchor-label="addFavoriteServiceState" id="443158619%2FProperties%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="add-favorite-service-state.html">addFavoriteServiceState</a><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/lifecycle/LiveData.html">LiveData</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../cat.copernic.letmedoit.Utils/-data-state/index.html">DataState</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="135043778%2FProperties%2F492899073" anchor-label="addHistoryDealState" id="135043778%2FProperties%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="add-history-deal-state.html"><span>add</span><wbr></wbr><span>History</span><wbr></wbr><span>Deal</span><wbr></wbr><span><span>State</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="135043778%2FProperties%2F492899073"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app:dokkaHtml/release"><a data-name="135043778%2FProperties%2F492899073" anchor-label="addHistoryDealState" id="135043778%2FProperties%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="add-history-deal-state.html">addHistoryDealState</a><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/lifecycle/LiveData.html">LiveData</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../cat.copernic.letmedoit.Utils/-data-state/index.html">DataState</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1163585884%2FProperties%2F492899073" anchor-label="addOpinionState" id="-1163585884%2FProperties%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="add-opinion-state.html"><span>add</span><wbr></wbr><span>Opinion</span><wbr></wbr><span><span>State</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1163585884%2FProperties%2F492899073"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app:dokkaHtml/release"><a data-name="-1163585884%2FProperties%2F492899073" anchor-label="addOpinionState" id="-1163585884%2FProperties%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="add-opinion-state.html">addOpinionState</a><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/lifecycle/LiveData.html">LiveData</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../cat.copernic.letmedoit.Utils/-data-state/index.html">DataState</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1924648599%2FProperties%2F492899073" anchor-label="addServiceState" id="1924648599%2FProperties%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="add-service-state.html"><span>add</span><wbr></wbr><span>Service</span><wbr></wbr><span><span>State</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1924648599%2FProperties%2F492899073"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app:dokkaHtml/release"><a data-name="1924648599%2FProperties%2F492899073" anchor-label="addServiceState" id="1924648599%2FProperties%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="add-service-state.html">addServiceState</a><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/lifecycle/LiveData.html">LiveData</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../cat.copernic.letmedoit.Utils/-data-state/index.html">DataState</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="2060052642%2FProperties%2F492899073" anchor-label="deleteAvatarFromStorageState" id="2060052642%2FProperties%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="delete-avatar-from-storage-state.html"><span>delete</span><wbr></wbr><span>Avatar</span><wbr></wbr><span>From</span><wbr></wbr><span>Storage</span><wbr></wbr><span><span>State</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2060052642%2FProperties%2F492899073"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app:dokkaHtml/release"><a data-name="2060052642%2FProperties%2F492899073" anchor-label="deleteAvatarFromStorageState" id="2060052642%2FProperties%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="delete-avatar-from-storage-state.html">deleteAvatarFromStorageState</a><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/lifecycle/LiveData.html">LiveData</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../cat.copernic.letmedoit.Utils/-data-state/index.html">DataState</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1535382784%2FProperties%2F492899073" anchor-label="deleteCurriculumFromStorageState" id="1535382784%2FProperties%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="delete-curriculum-from-storage-state.html"><span>delete</span><wbr></wbr><span>Curriculum</span><wbr></wbr><span>From</span><wbr></wbr><span>Storage</span><wbr></wbr><span><span>State</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1535382784%2FProperties%2F492899073"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app:dokkaHtml/release"><a data-name="1535382784%2FProperties%2F492899073" anchor-label="deleteCurriculumFromStorageState" id="1535382784%2FProperties%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="delete-curriculum-from-storage-state.html">deleteCurriculumFromStorageState</a><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/lifecycle/LiveData.html">LiveData</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../cat.copernic.letmedoit.Utils/-data-state/index.html">DataState</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-126054712%2FProperties%2F492899073" anchor-label="deleteDealFromHistoryState" id="-126054712%2FProperties%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="delete-deal-from-history-state.html"><span>delete</span><wbr></wbr><span>Deal</span><wbr></wbr><span>From</span><wbr></wbr><span>History</span><wbr></wbr><span><span>State</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-126054712%2FProperties%2F492899073"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app:dokkaHtml/release"><a data-name="-126054712%2FProperties%2F492899073" anchor-label="deleteDealFromHistoryState" id="-126054712%2FProperties%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="delete-deal-from-history-state.html">deleteDealFromHistoryState</a><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/lifecycle/LiveData.html">LiveData</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../cat.copernic.letmedoit.Utils/-data-state/index.html">DataState</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-25407113%2FProperties%2F492899073" anchor-label="deleteFavoriteProfileState" id="-25407113%2FProperties%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="delete-favorite-profile-state.html"><span>delete</span><wbr></wbr><span>Favorite</span><wbr></wbr><span>Profile</span><wbr></wbr><span><span>State</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-25407113%2FProperties%2F492899073"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app:dokkaHtml/release"><a data-name="-25407113%2FProperties%2F492899073" anchor-label="deleteFavoriteProfileState" id="-25407113%2FProperties%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="delete-favorite-profile-state.html">deleteFavoriteProfileState</a><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/lifecycle/LiveData.html">LiveData</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../cat.copernic.letmedoit.Utils/-data-state/index.html">DataState</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1894633085%2FProperties%2F492899073" anchor-label="deleteFavoriteServiceState" id="-1894633085%2FProperties%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="delete-favorite-service-state.html"><span>delete</span><wbr></wbr><span>Favorite</span><wbr></wbr><span>Service</span><wbr></wbr><span><span>State</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1894633085%2FProperties%2F492899073"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app:dokkaHtml/release"><a data-name="-1894633085%2FProperties%2F492899073" anchor-label="deleteFavoriteServiceState" id="-1894633085%2FProperties%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="delete-favorite-service-state.html">deleteFavoriteServiceState</a><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/lifecycle/LiveData.html">LiveData</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../cat.copernic.letmedoit.Utils/-data-state/index.html">DataState</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1082628031%2FProperties%2F492899073" anchor-label="deleteServiceState" id="1082628031%2FProperties%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="delete-service-state.html"><span>delete</span><wbr></wbr><span>Service</span><wbr></wbr><span><span>State</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1082628031%2FProperties%2F492899073"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app:dokkaHtml/release"><a data-name="1082628031%2FProperties%2F492899073" anchor-label="deleteServiceState" id="1082628031%2FProperties%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="delete-service-state.html">deleteServiceState</a><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/lifecycle/LiveData.html">LiveData</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../cat.copernic.letmedoit.Utils/-data-state/index.html">DataState</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-403235559%2FProperties%2F492899073" anchor-label="getAllUserState" id="-403235559%2FProperties%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="get-all-user-state.html"><span>get</span><wbr></wbr><span>All</span><wbr></wbr><span>User</span><wbr></wbr><span><span>State</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-403235559%2FProperties%2F492899073"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app:dokkaHtml/release"><a data-name="-403235559%2FProperties%2F492899073" anchor-label="getAllUserState" id="-403235559%2FProperties%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="get-all-user-state.html">getAllUserState</a><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/lifecycle/LiveData.html">LiveData</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../cat.copernic.letmedoit.Utils/-data-state/index.html">DataState</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../cat.copernic.letmedoit.data.model/-users/index.html">Users</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="781321256%2FProperties%2F492899073" anchor-label="getChatsState" id="781321256%2FProperties%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="get-chats-state.html"><span>get</span><wbr></wbr><span>Chats</span><wbr></wbr><span><span>State</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="781321256%2FProperties%2F492899073"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app:dokkaHtml/release"><a data-name="781321256%2FProperties%2F492899073" anchor-label="getChatsState" id="781321256%2FProperties%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="get-chats-state.html">getChatsState</a><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/lifecycle/LiveData.html">LiveData</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../cat.copernic.letmedoit.Utils/-data-state/index.html">DataState</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-array-list/index.html">ArrayList</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../cat.copernic.letmedoit.Utils.datahepers/-user-chats/index.html">UserChats</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1764596719%2FProperties%2F492899073" anchor-label="getFavoriteProfilesState" id="-1764596719%2FProperties%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="get-favorite-profiles-state.html"><span>get</span><wbr></wbr><span>Favorite</span><wbr></wbr><span>Profiles</span><wbr></wbr><span><span>State</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1764596719%2FProperties%2F492899073"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app:dokkaHtml/release"><a data-name="-1764596719%2FProperties%2F492899073" anchor-label="getFavoriteProfilesState" id="-1764596719%2FProperties%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="get-favorite-profiles-state.html">getFavoriteProfilesState</a><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/lifecycle/LiveData.html">LiveData</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../cat.copernic.letmedoit.Utils/-data-state/index.html">DataState</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-array-list/index.html">ArrayList</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../cat.copernic.letmedoit.data.model/-user-favorite-profiles/index.html">UserFavoriteProfiles</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="418940293%2FProperties%2F492899073" anchor-label="getFavoriteServicesState" id="418940293%2FProperties%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="get-favorite-services-state.html"><span>get</span><wbr></wbr><span>Favorite</span><wbr></wbr><span>Services</span><wbr></wbr><span><span>State</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="418940293%2FProperties%2F492899073"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app:dokkaHtml/release"><a data-name="418940293%2FProperties%2F492899073" anchor-label="getFavoriteServicesState" id="418940293%2FProperties%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="get-favorite-services-state.html">getFavoriteServicesState</a><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/lifecycle/LiveData.html">LiveData</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../cat.copernic.letmedoit.Utils/-data-state/index.html">DataState</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-array-list/index.html">ArrayList</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../cat.copernic.letmedoit.data.model/-user-favorite-services/index.html">UserFavoriteServices</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="130583166%2FProperties%2F492899073" anchor-label="getHistoryDealsState" id="130583166%2FProperties%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="get-history-deals-state.html"><span>get</span><wbr></wbr><span>History</span><wbr></wbr><span>Deals</span><wbr></wbr><span><span>State</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="130583166%2FProperties%2F492899073"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app:dokkaHtml/release"><a data-name="130583166%2FProperties%2F492899073" anchor-label="getHistoryDealsState" id="130583166%2FProperties%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="get-history-deals-state.html">getHistoryDealsState</a><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/lifecycle/LiveData.html">LiveData</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../cat.copernic.letmedoit.Utils/-data-state/index.html">DataState</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-array-list/index.html">ArrayList</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../cat.copernic.letmedoit.Utils.datahepers/-history-deal/index.html">HistoryDeal</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="610667868%2FProperties%2F492899073" anchor-label="getOpinionsState" id="610667868%2FProperties%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="get-opinions-state.html"><span>get</span><wbr></wbr><span>Opinions</span><wbr></wbr><span><span>State</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="610667868%2FProperties%2F492899073"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app:dokkaHtml/release"><a data-name="610667868%2FProperties%2F492899073" anchor-label="getOpinionsState" id="610667868%2FProperties%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="get-opinions-state.html">getOpinionsState</a><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/lifecycle/LiveData.html">LiveData</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../cat.copernic.letmedoit.Utils/-data-state/index.html">DataState</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-array-list/index.html">ArrayList</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../cat.copernic.letmedoit.data.model/-opinion/index.html">Opinion</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1856656329%2FProperties%2F492899073" anchor-label="getServicesState" id="1856656329%2FProperties%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="get-services-state.html"><span>get</span><wbr></wbr><span>Services</span><wbr></wbr><span><span>State</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1856656329%2FProperties%2F492899073"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app:dokkaHtml/release"><a data-name="1856656329%2FProperties%2F492899073" anchor-label="getServicesState" id="1856656329%2FProperties%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="get-services-state.html">getServicesState</a><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/lifecycle/LiveData.html">LiveData</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../cat.copernic.letmedoit.Utils/-data-state/index.html">DataState</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-array-list/index.html">ArrayList</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../cat.copernic.letmedoit.Utils.datahepers/-user-services/index.html">UserServices</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1330104822%2FProperties%2F492899073" anchor-label="getUserState" id="1330104822%2FProperties%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="get-user-state.html"><span>get</span><wbr></wbr><span>User</span><wbr></wbr><span><span>State</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1330104822%2FProperties%2F492899073"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app:dokkaHtml/release"><a data-name="1330104822%2FProperties%2F492899073" anchor-label="getUserState" id="1330104822%2FProperties%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="get-user-state.html">getUserState</a><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/lifecycle/LiveData.html">LiveData</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../cat.copernic.letmedoit.Utils/-data-state/index.html">DataState</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../cat.copernic.letmedoit.data.model/-users/index.html">Users</a><span class="token operator">?</span><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1918162255%2FProperties%2F492899073" anchor-label="updateAboutMeState" id="-1918162255%2FProperties%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="update-about-me-state.html"><span>update</span><wbr></wbr><span>About</span><wbr></wbr><span>Me</span><wbr></wbr><span><span>State</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1918162255%2FProperties%2F492899073"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app:dokkaHtml/release"><a data-name="-1918162255%2FProperties%2F492899073" anchor-label="updateAboutMeState" id="-1918162255%2FProperties%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="update-about-me-state.html">updateAboutMeState</a><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/lifecycle/LiveData.html">LiveData</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../cat.copernic.letmedoit.Utils/-data-state/index.html">DataState</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-704185083%2FProperties%2F492899073" anchor-label="updateAvatarState" id="-704185083%2FProperties%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="update-avatar-state.html"><span>update</span><wbr></wbr><span>Avatar</span><wbr></wbr><span><span>State</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-704185083%2FProperties%2F492899073"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app:dokkaHtml/release"><a data-name="-704185083%2FProperties%2F492899073" anchor-label="updateAvatarState" id="-704185083%2FProperties%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="update-avatar-state.html">updateAvatarState</a><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/lifecycle/LiveData.html">LiveData</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../cat.copernic.letmedoit.Utils/-data-state/index.html">DataState</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1019020485%2FProperties%2F492899073" anchor-label="updateBanState" id="-1019020485%2FProperties%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="update-ban-state.html"><span>update</span><wbr></wbr><span>Ban</span><wbr></wbr><span><span>State</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1019020485%2FProperties%2F492899073"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app:dokkaHtml/release"><a data-name="-1019020485%2FProperties%2F492899073" anchor-label="updateBanState" id="-1019020485%2FProperties%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="update-ban-state.html">updateBanState</a><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/lifecycle/LiveData.html">LiveData</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../cat.copernic.letmedoit.Utils/-data-state/index.html">DataState</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1289477082%2FProperties%2F492899073" anchor-label="updateContactInfoState" id="1289477082%2FProperties%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="update-contact-info-state.html"><span>update</span><wbr></wbr><span>Contact</span><wbr></wbr><span>Info</span><wbr></wbr><span><span>State</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1289477082%2FProperties%2F492899073"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app:dokkaHtml/release"><a data-name="1289477082%2FProperties%2F492899073" anchor-label="updateContactInfoState" id="1289477082%2FProperties%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="update-contact-info-state.html">updateContactInfoState</a><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/lifecycle/LiveData.html">LiveData</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../cat.copernic.letmedoit.Utils/-data-state/index.html">DataState</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1074421657%2FProperties%2F492899073" anchor-label="updateCurriculumState" id="-1074421657%2FProperties%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="update-curriculum-state.html"><span>update</span><wbr></wbr><span>Curriculum</span><wbr></wbr><span><span>State</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1074421657%2FProperties%2F492899073"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app:dokkaHtml/release"><a data-name="-1074421657%2FProperties%2F492899073" anchor-label="updateCurriculumState" id="-1074421657%2FProperties%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="update-curriculum-state.html">updateCurriculumState</a><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/lifecycle/LiveData.html">LiveData</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../cat.copernic.letmedoit.Utils/-data-state/index.html">DataState</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1436735457%2FProperties%2F492899073" anchor-label="updateDarkThemeState" id="-1436735457%2FProperties%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="update-dark-theme-state.html"><span>update</span><wbr></wbr><span>Dark</span><wbr></wbr><span>Theme</span><wbr></wbr><span><span>State</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1436735457%2FProperties%2F492899073"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app:dokkaHtml/release"><a data-name="-1436735457%2FProperties%2F492899073" anchor-label="updateDarkThemeState" id="-1436735457%2FProperties%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="update-dark-theme-state.html">updateDarkThemeState</a><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/lifecycle/LiveData.html">LiveData</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../cat.copernic.letmedoit.Utils/-data-state/index.html">DataState</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-2086713660%2FProperties%2F492899073" anchor-label="updateLanguageState" id="-2086713660%2FProperties%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="update-language-state.html"><span>update</span><wbr></wbr><span>Language</span><wbr></wbr><span><span>State</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2086713660%2FProperties%2F492899073"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app:dokkaHtml/release"><a data-name="-2086713660%2FProperties%2F492899073" anchor-label="updateLanguageState" id="-2086713660%2FProperties%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="update-language-state.html">updateLanguageState</a><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/lifecycle/LiveData.html">LiveData</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../cat.copernic.letmedoit.Utils/-data-state/index.html">DataState</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-565177759%2FProperties%2F492899073" anchor-label="updateLocationState" id="-565177759%2FProperties%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="update-location-state.html"><span>update</span><wbr></wbr><span>Location</span><wbr></wbr><span><span>State</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-565177759%2FProperties%2F492899073"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app:dokkaHtml/release"><a data-name="-565177759%2FProperties%2F492899073" anchor-label="updateLocationState" id="-565177759%2FProperties%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="update-location-state.html">updateLocationState</a><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/lifecycle/LiveData.html">LiveData</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../cat.copernic.letmedoit.Utils/-data-state/index.html">DataState</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="757617335%2FProperties%2F492899073" anchor-label="updateNameState" id="757617335%2FProperties%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="update-name-state.html"><span>update</span><wbr></wbr><span>Name</span><wbr></wbr><span><span>State</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="757617335%2FProperties%2F492899073"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app:dokkaHtml/release"><a data-name="757617335%2FProperties%2F492899073" anchor-label="updateNameState" id="757617335%2FProperties%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="update-name-state.html">updateNameState</a><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/lifecycle/LiveData.html">LiveData</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../cat.copernic.letmedoit.Utils/-data-state/index.html">DataState</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1099208391%2FProperties%2F492899073" anchor-label="updatePasswordState" id="1099208391%2FProperties%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="update-password-state.html"><span>update</span><wbr></wbr><span>Password</span><wbr></wbr><span><span>State</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1099208391%2FProperties%2F492899073"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app:dokkaHtml/release"><a data-name="1099208391%2FProperties%2F492899073" anchor-label="updatePasswordState" id="1099208391%2FProperties%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="update-password-state.html">updatePasswordState</a><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/lifecycle/LiveData.html">LiveData</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../cat.copernic.letmedoit.Utils/-data-state/index.html">DataState</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1140530761%2FProperties%2F492899073" anchor-label="updateRatingState" id="1140530761%2FProperties%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="update-rating-state.html"><span>update</span><wbr></wbr><span>Rating</span><wbr></wbr><span><span>State</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1140530761%2FProperties%2F492899073"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app:dokkaHtml/release"><a data-name="1140530761%2FProperties%2F492899073" anchor-label="updateRatingState" id="1140530761%2FProperties%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="update-rating-state.html">updateRatingState</a><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/lifecycle/LiveData.html">LiveData</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../cat.copernic.letmedoit.Utils/-data-state/index.html">DataState</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1001672131%2FProperties%2F492899073" anchor-label="updateScheduleState" id="1001672131%2FProperties%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="update-schedule-state.html"><span>update</span><wbr></wbr><span>Schedule</span><wbr></wbr><span><span>State</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1001672131%2FProperties%2F492899073"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app:dokkaHtml/release"><a data-name="1001672131%2FProperties%2F492899073" anchor-label="updateScheduleState" id="1001672131%2FProperties%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="update-schedule-state.html">updateScheduleState</a><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/lifecycle/LiveData.html">LiveData</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../cat.copernic.letmedoit.Utils/-data-state/index.html">DataState</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-942005497%2FProperties%2F492899073" anchor-label="updateSurnameState" id="-942005497%2FProperties%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":app:dokkaHtml/release" data-filterable-set=":app:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="update-surname-state.html"><span>update</span><wbr></wbr><span>Surname</span><wbr></wbr><span><span>State</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-942005497%2FProperties%2F492899073"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":app:dokkaHtml/release"><a data-name="-942005497%2FProperties%2F492899073" anchor-label="updateSurnameState" id="-942005497%2FProperties%2F492899073" data-filterable-set=":app:dokkaHtml/release"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="update-surname-state.html">updateSurnameState</a><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/lifecycle/LiveData.html">LiveData</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../cat.copernic.letmedoit.Utils/-data-state/index.html">DataState</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2023 Copyright</span><span
+                class="pull-right"><span>Generated by </span><a
+                href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+    </div>
+</div>
+</body>
+</html>
